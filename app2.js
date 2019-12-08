@@ -1,4 +1,8 @@
-console.log('outside app.js');
+import { one }  from "./one.js";
+
+
+
+console.log('outside app2.js');
 new Vue({
 	el: '#app',
 	data: {
@@ -28,14 +32,6 @@ new Vue({
 	destroyed: function(){
 					console.log('destroyed');
 	},
-
-			
-	render:function(createElement){
-					window.vm = this;
-				console.log('inside render');
-				console.log( typeof this);
-				console.log(typeof(this.hi));
-				return createElement('div',this.hi);
-	}
+				template: '<div>{{ hi }}<a href="https://www.google.com" title="mylink"> myanchor </a>' + one('xxx') + '</div>'
 });
 
