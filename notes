@@ -2,3 +2,5 @@ https://jsfiddle.net/chrisvfritz/b2qj69o1/
 
 https://vuejs.org/v2/guide/components.html //dynamic components
 
+cors failure when we introduce type=module for script tag. need server based
+rather than file based.

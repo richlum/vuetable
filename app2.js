@@ -1,6 +1,11 @@
 import { one }  from "./one.js";
 
-
+const subel = new Vue({
+				data: {
+								hi: "sub object "
+				},
+				template: "<div> {{ hi }} </div>"
+});
 
 console.log('outside app2.js');
 new Vue({
@@ -32,6 +37,6 @@ new Vue({
 	destroyed: function(){
 					console.log('destroyed');
 	},
-				template: '<div>{{ hi }}<a href="https://www.google.com" title="mylink"> myanchor </a>' + one('xxx') + '</div>'
+	template: '<div>{{ hi }}<a href="https://www.google.com" title="mylink"> myanchor </a>' + one('xxx') + subel + '</div>'
 });
 
