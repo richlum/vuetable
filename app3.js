@@ -19,7 +19,10 @@ new Vue({
 	el: '#app',
 	data: function() {
 					return {
-						hi: 'hi there'
+						hi: 'hi there',
+						clickHandler: function(){
+										alert('ouch');
+						}
 					}
 	},
   render(createElement){
@@ -27,8 +30,9 @@ new Vue({
 				console.log('inside render');
 				console.log( typeof this);
 				console.log(typeof(this.hi));
+
 				return createElement('div', 
-								{ 
+								{
 									class:{
 											foo: true,
 											bar: false
@@ -39,6 +43,15 @@ new Vue({
 									},
 									attrs:{
 										'id'			: this.hi + 'world'
+									},
+									props: {
+										pdfFieldName: 'bar'
+									},
+									//domProps:{
+									//				innerHTML: 'baz'
+									//}
+									on: { 
+													click: this.clickHandler
 									}
 								}
 				,
