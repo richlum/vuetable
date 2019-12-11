@@ -1,5 +1,8 @@
 console.log('outside app.js');
 
+import {tabcomponent} from './component/tabthing.js';
+
+Vue.component('my-tab',tabcomponent);
 Vue.component('my-subel',{
 				data: function(){
 								return {
@@ -60,7 +63,9 @@ new Vue({
 							createElement('div',this.hi),
 							createElement('div','A headline'),
 							createElement('p','Example Text'),
-							createElement('my-subel')
+							createElement('my-subel'),
+							createElement('my-tab')
+
 				] );
 	}
 });
